@@ -6,5 +6,5 @@ target 'PotionsMaster' do
   use_frameworks!
 
   # Pods for PotionsMaster
-
+	pod 'RealmSwift', '~>10'
 end
