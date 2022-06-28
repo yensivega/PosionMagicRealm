@@ -30,13 +30,24 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import RealmSwift
 import SwiftUI
 
 struct IngredientListView: View {
   @State private var ingredientFormIsPresented = false
 
-  @State var ingredients: [Ingredient] = []
-  @State var boughtIngredients: [Ingredient] = []
+	@ObservedResults(
+		Ingredient.self,
+		where: { $0.bought == false }
+	) var ingredients
+	
+	@ObservedResults(
+		Ingredient.self,
+		where: { $0.bought == true }
+		// For previous iOS version
+		// filter: NSPredicate(format: "bought == true")
+	) var boughtIngredients
+	
 
   @ViewBuilder var newIngredientButton: some View {
     Button(action: openNewIngredient) {
