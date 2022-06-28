@@ -30,14 +30,25 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
+import RealmSwift
 
-@main
-struct AppMain: App {
-  var body: some Scene {
-    WindowGroup {
-      ContentView()
-				.environment(\.realmConfiguration, RealmMigrator.configuration)
-    }
-  }
+enum RealmMigrator {
+	static private func migrationBlock(
+		migration: Migration,
+		oldSchemaVersion: UInt64
+	) {
+		if oldSchemaVersion < 1 {
+			migration.enumerateObjects(ofType: Ingredient.className()) { oldObject, newObject in
+				newObject?["colorOption"] = ColorOptions.green
+			}
+		}
+	}
+	
+	static var configuration: Realm.Configuration {
+		Realm.Configuration(
+			schemaVersion: 1,
+			migrationBlock: RealmMigrator.migrationBlock
+		)
+	}
 }
