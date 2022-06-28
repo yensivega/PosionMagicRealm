@@ -12,6 +12,7 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		2543227E286AAEA0007DC213 /* ColorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543227D286AAEA0007DC213 /* ColorOptions.swift */; };
 		5FD8A906D3F13A8C94582D43 /* Pods_PotionsMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B730B30A2C1BC13FB5962A /* Pods_PotionsMaster.framework */; };
 		8496FA8727D71671009562D6 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496FA8627D71671009562D6 /* Ingredient.swift */; };
 		8496FA8927D71685009562D6 /* IngredientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496FA8827D71685009562D6 /* IngredientMock.swift */; };
@@ -28,6 +29,7 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2543227D286AAEA0007DC213 /* ColorOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOptions.swift; sourceTree = "<group>"; };
 		76B730B30A2C1BC13FB5962A /* Pods_PotionsMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotionsMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A6E0F06EAEB0594D55D5B0 /* Pods-PotionsMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotionsMaster.release.xcconfig"; path = "Target Support Files/Pods-PotionsMaster/Pods-PotionsMaster.release.xcconfig"; sourceTree = "<group>"; };
 		8496FA8627D71671009562D6 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				8496FA8627D71671009562D6 /* Ingredient.swift */,
 				8496FA8827D71685009562D6 /* IngredientMock.swift */,
+				2543227D286AAEA0007DC213 /* ColorOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,7 +129,6 @@
 				BDF89F9803983A4503AAB949 /* Pods-PotionsMaster.debug.xcconfig */,
 				81A6E0F06EAEB0594D55D5B0 /* Pods-PotionsMaster.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -264,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2543227E286AAEA0007DC213 /* ColorOptions.swift in Sources */,
 				8496FA8727D71671009562D6 /* Ingredient.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				8496FA8E27D717F1009562D6 /* IngredientFormView.swift in Sources */,
