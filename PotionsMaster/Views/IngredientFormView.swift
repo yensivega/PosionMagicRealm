@@ -40,6 +40,7 @@ struct IngredientFormView: View {
   @ObservedRealmObject var ingredient: Ingredient
 
   let quantityOptions = [1, 2, 3, 4, 5]
+	let colorOptions = ColorOptions.allCases
 
   var isUpdating: Bool {
 		ingredient.realm != nil
@@ -54,7 +55,13 @@ struct IngredientFormView: View {
             Text("\(option)")
           }
         }
-        // TODO: Add Color Picker
+        
+				Picker("Color", selection: $ingredient.colorOption) {
+					ForEach(colorOptions, id: \.self) { color in
+						Text("\(color.title)")
+					}
+				}
+				
         Section("Notes📝") {
           TextEditor(text: $ingredient.notes)
         }
