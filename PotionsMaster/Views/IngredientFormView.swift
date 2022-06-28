@@ -30,18 +30,19 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import RealmSwift
 import SwiftUI
 
 struct IngredientFormView: View {
+	@Environment(\.realm) var realm
   @Environment(\.dismiss) var dismiss
 
-  @ObservedObject var ingredient: Ingredient
+  @ObservedRealmObject var ingredient: Ingredient
 
   let quantityOptions = [1, 2, 3, 4, 5]
 
   var isUpdating: Bool {
-    // TODO: Mark as updating
-    return false
+		ingredient.realm != nil
   }
 
   var body: some View {
@@ -80,6 +81,9 @@ struct IngredientFormView: View {
 extension IngredientFormView {
   func save() {
     // TODO: Save ingredient
+		try? realm.write {
+			realm.add(ingredient)
+		}
     dismiss()
   }
 }

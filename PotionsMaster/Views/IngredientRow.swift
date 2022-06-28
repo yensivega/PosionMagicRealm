@@ -30,11 +30,13 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import RealmSwift
 import SwiftUI
 
 struct IngredientRow: View {
   @State private var ingredientFormIsPresented = false
-  let ingredient: Ingredient
+	
+	@ObservedRealmObject var ingredient: Ingredient
 
   var buttonImage: String {
     ingredient.bought ? "circle.inset.filled" : "circle"
@@ -76,7 +78,9 @@ extension IngredientRow {
   }
 
   func toggleBought() {
-    // TODO: Toggle bought
+		withAnimation {
+			$ingredient.bought.wrappedValue.toggle()
+		}
   }
 }
 
