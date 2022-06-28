@@ -30,12 +30,14 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import RealmSwift
 import SwiftUI
 
-class Ingredient: ObservableObject, Identifiable {
-  let id = UUID()
-  @Published var title = ""
-  @Published var notes = ""
-  @Published var quantity = 1
-  @Published var bought = false
+class Ingredient: Object, ObjectKeyIdentifiable{
+	@Persisted(primaryKey: true) var id: ObjectId
+	
+  @Persisted var title = ""
+  @Persisted var notes = ""
+  @Persisted var quantity = 1
+  @Persisted var bought = false
 }
