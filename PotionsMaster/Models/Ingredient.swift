@@ -42,3 +42,9 @@ class Ingredient: Object, ObjectKeyIdentifiable{
   @Persisted var bought = false
 	@Persisted var colorOption = ColorOptions.green
 }
+
+extension Ingredient {
+	var color: Color {
+		colorOption.color
+	}
+}
